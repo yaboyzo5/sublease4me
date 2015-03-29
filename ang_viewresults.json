@@ -4,12 +4,41 @@ var searchresd = {"-JlXF2oscLwGBiojoWgb":{"address":{"city":"Ann Arbor","complex
 var fakestuff = {"123":"hello","456":"bye"}
 
 
-	var app = angular.module('viewres',[]);
+	var app = angular.module('viewres',["firebase"]);
 
-	app.controller('resultsviewController',function(){
-		this.list_result = searchresd;
+	app.factory("CityListing", ["$firebaseObject",
+  		function($firebaseObject) {
+    			return function(city) {
+      			// create a reference to the Firebase where we will read our data
+     				var ref = new Firebase("https://subleaseforme.firebaseio.com/cities");
+      				var profileRef = ref.child(city);
+
+      				// return it as a synchronized object
+      				return $firebaseObject(profileRef);
+    }
+  }
+]);
+
+
+app.controller("CityListCtrl", ["$scope", "CityListing",
+  function($scope, CityListing) {
+    // put our profile in the scope for use in DOM
+    $scope.CityLisitng = CityListing("East Lansing");
+
+    // calling $save() on the synchronized object syncs all data back to Firebase
+    
+  }
+]);
+
+
+	app.controller('resultsviewController',function($scope,CityListing){
+		this.list_result = CityListing("East Lansing");
 	});
 
+
+function queryFirebase(startIndex,maxResult,city){
+	alert();
+};
 
 
 
