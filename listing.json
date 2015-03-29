@@ -1,0 +1,25 @@
+{
+    "address": {
+        "city": "Williamston",
+        "complex": "",
+        "country": "United States",
+        "pets": "Yes",
+        "state": "MI",
+        "street": "884 Mackinaw Blvd.",
+        "subunit": "",
+        "unit": "",
+        "zip": "40552"
+    },
+    "availability": {
+        "closes": "20150501",
+        "ends": "20151231",
+        "starts": "20150601"
+    },
+    "capacity": 1,
+    "exactprice": 200,
+    "parking": "Paid",
+    "poster": "luigi",
+    "pricerange": "0-300",
+    "sqfoot": 100,
+    "sqfootrange": "0-200"
+}

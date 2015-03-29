@@ -1,0 +1,16 @@
+var searchresd = {"-JlXF2oscLwGBiojoWgb":{"address":{"city":"Ann Arbor","complex":"","country":"United States","pets":"No","state":"MI","street":"145 Princess Peach Dr.","subunit":"","unit":"24","zip":"40012"},"availability":{"closes":"05012015","ends":"2015-12-31","starts":"2015-06-01"},"capacity":2,"exactprice":900,"description":"Some stuff here that is useful!","parking":"Free","poster":"bowser","pricerange":"601-900","description":"Some stuff here that is useful!","sqfoot":670,"sqfootrange":"500-800"},"-JlXFow-8cOJ2LMqJI0z":{"address":{"city":"East Lansing","complex":"","country":"United States","pets":"No","state":"MI","street":"331 Mario Party Ln.","subunit":"","unit":"01","zip":"40052"},"availability":{"closes":"07012015","ends":"12012015","starts":"04012015"},"capacity":4,"description":"Some stuff here that is useful!","exactprice":1900,"parking":"Free","poster":"mario","pricerange":"1501-2000","sqfoot":446,"sqfootrange":"300-500"},"-JlXGJysw9s_--0-X-nT":{"address":{"city":"Ann Arbor","complex":"","country":"United States","pets":"Yes","state":"MI","street":"445 Smash Bros Ave.","subunit":"","unit":"06","zip":"40452"},"availability":{"closes":"09012016","ends":"11012017","starts":"01012019"},"capacity":1,"exactprice":200,"description":"Some stuff here that is useful!","parking":"Paid","poster":"luigi","pricerange":"0-300","sqfoot":100,"sqfootrange":"0-200"}}
+
+
+var fakestuff = {"123":"hello","456":"bye"}
+
+
+	var app = angular.module('viewres',[]);
+
+	app.controller('resultsviewController',function(){
+		this.list_result = searchresd;
+	});
+
+
+
+
+

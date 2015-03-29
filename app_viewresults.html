@@ -1,0 +1,55 @@
+<!doctype HTML>
+
+<html ng-app="viewres">
+
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<!--<script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script> -->
+	<script src="ang_viewresults.json"></script>
+
+</head>
+
+<body>
+
+<div id="resultsView" ng-controller="resultsviewController as resview">
+
+	<div class="iResultView" ng-repeat="item in resview.list_result">
+		<div style="width:20%; height:100%; background-color: red; float: left;">
+			<img src="image">
+		</div>
+
+		<div style="width:70%; height: 100%; background-color: cyan; float: right;">
+			<h3 class="addrtxt">{{item.address.street +" "+ item.address.unit + " "+ item.address.city}}</h3>
+			<h5 class="pricetxt">{{item.exactprice | currency}}</h5>
+			<table>
+
+				<tr>
+					<td class="lstart">Lease Starts: {{item.availability.starts | date:'mediumDate'}}</td>
+
+					<td class="lends">Lease Ends: {{item.availability.ends | date:'mediumDate'}}</td>
+
+					<td class="lrsvp">Reserve By: {{item.availability.closes | date:'mediumDate'}}</td>
+
+				</tr>
+
+				<tr>
+					<td class="size">Size: {{item.sqfoot}} Sq.Ft.</td>
+					<td class="cars">Parking: {{item.parking}}</td>
+					<td class="pets">Pet-friendly: {{item.address.pets}}</td>
+					<td class="rcap">People: {{item.capacity}}</td>
+				</tr>
+			</table>
+		</div>
+	
+	</div>
+
+</div>
+
+	
+</body>
+
+</html>
